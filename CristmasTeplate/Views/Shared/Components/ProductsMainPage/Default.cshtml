@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ProductMainPageViewModel>
+
+<div class="product-section section pt-120 pb-120">
+    <div class="container">
+            
+        <!-- Product Wrapper Start-->
+        <div class="row">
+                
+            <!-- Product Start-->
+            @foreach (var item in Model)
+            {
+                    
+                        <div class="col-lg-4 col-md-6 col-12 mb-60">
+                        
+                            <div class="product">
+
+                                <!-- Image Wrapper -->
+                                <div class="image">
+                                    <!-- Image -->
+                                    <a asp-controller="ProductDetail" asp-action="Detail" asp-route-id="@item.Id" class="img"><img src="~/img/product/@item.MainImg" alt="Product"></a>
+                                    <!-- Wishlist -->
+                                    <a class="wishlist"><i class="fa fa-heart-o"></i></a>
+                                    <!-- Label -->
+                                    <span class="label">New</span>
+                                </div>
+                        
+                                <!-- Content -->
+                                <div class="content">
+                            
+                                    <!-- Head Content -->
+                                    <div class="head fix">
+                               
+                                        <!-- Title & Category -->
+                                        <div class="title-category float-left">
+                                            <h5 class="title"><a asp-controller="ProductDetail" asp-action="Detail" asp-route-id="@item.Id">@item.Title</a></h5>
+                                            <a href="shop.html" class="category">@item.CategoryName</a>
+                                        </div>
+                                        <!-- Price -->
+                                        <div class="price float-right">
+                                            <span class="new">$@item.Price</span>
+                                            <!-- Old Price Mockup If Need -->
+                                            <!-- <span class="old">$46</span> -->
+                                        </div>
+                                
+                                    </div>
+                            
+                                    <!-- Action Button -->
+                                    <div class="action-button fix">
+                                        <a href="#">add to cart</a>
+                                    </div>
+                            
+                                </div>
+
+                            </div>
+                        
+                    
+                        </div><!-- Product End-->
+                    
+                
+            }
+            <!-- Product Start-->
+            
