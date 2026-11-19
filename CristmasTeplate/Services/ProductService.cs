@@ -53,6 +53,7 @@ namespace CristmasTeplate.Services
 
             ProductDetailViewModel product = new();
             product.Description = res.Description;
+            product.Id = res.Id;
             product.Title = res.Title;
             product.Price = res.Price;
             product.Style = res.Style;

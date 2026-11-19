@@ -151,3 +151,4 @@ C:\Users\Asus\Desktop\PA502\Backend\AspNet\CristmasTeplate\CristmasTeplate\bin\D
 C:\Users\Asus\Desktop\PA502\Backend\AspNet\CristmasTeplate\CristmasTeplate\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Asus\Desktop\PA502\Backend\AspNet\CristmasTeplate\CristmasTeplate\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Asus\Desktop\PA502\Backend\AspNet\CristmasTeplate\CristmasTeplate\obj\Debug\net8.0\CristmasTeplate.csproj.AssemblyReference.cache
+C:\Users\Asus\Desktop\PA502\Backend\AspNet\CristmasTeplate\CristmasTeplate\obj\Debug\net8.0\CristmasTeplate.sourcelink.json

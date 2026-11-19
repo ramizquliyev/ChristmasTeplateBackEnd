@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WishListItemUIVM>
+
+@await Component.InvokeAsync("WishListBanner");
+
+<div class="wishlist-section section pt-120 pb-90">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                   
+                <div class="table-responsive mb-30">
+                    <table class="table cart-table text-center">
+                            
+                        <!-- Table Head -->
+                        <thead>
+                            <tr>
+                                <th class="image">Image</th>
+                                <th class="name">Product Name</th>
+                                <th class="price">Price</th>
+                                <th class="total">Add to cart</th>
+                                <th class="remove">Remove</th>
+                            </tr>
+                        </thead>
+                            
+                        <!-- Table Body -->
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td><a href="#" class="cart-pro-image"><img src="~/img/product/@item.MainImage" alt="" /></a></td>
+                                    <td><a asp-controller="productdetail" asp-action="detail" asp-route-id="@item.ProductId" class="cart-pro-title">@item.Name</a></td>
+                                    <td><p class="cart-pro-price">$@item.Price</p></td>
+                                    <td>
+                                        <form method="post" asp-controller="wishlist" asp-action="addtobasket" asp-route-id="@item.Id">
+                                            <button type="submit" class="wl-add-cart-btn">add to cart</button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form method="post" asp-controller="wishlist" asp-action="delete" asp-route-id="@item.Id">
+                                            <button type="submit" class="cart-pro-remove"><i class="fa fa-trash-o"></i></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                            
+                        </tbody>
+                    </table>
+                </div>
+                    
+            </div>
+        </div>
+    </div>
+</div><!-- Wishlist Section End-->

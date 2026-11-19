@@ -68,7 +68,9 @@
                     <div class="product-quantity">
                         <input type="text" value="0" name="qtybox">
                     </div>
-                    <button class="add-to-cart">add to cart</button>
+                    <form method="post" asp-controller="basket" asp-action="createorder" asp-route-id="@Model.Id">
+                        <button class="btn btn-success" type="submit">Add To Basket</button>
+                    </form>
                 </div>
                     
                 <!-- Action Button -->

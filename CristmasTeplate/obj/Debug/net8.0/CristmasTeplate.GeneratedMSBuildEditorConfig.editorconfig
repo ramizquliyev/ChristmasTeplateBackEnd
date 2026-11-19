@@ -67,12 +67,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Asus/Desktop/PA502/Backend/AspNet/CristmasTeplate/CristmasTeplate/Views/Basket/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFza2V0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Asus/Desktop/PA502/Backend/AspNet/CristmasTeplate/CristmasTeplate/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Asus/Desktop/PA502/Backend/AspNet/CristmasTeplate/CristmasTeplate/Views/ProductDetail/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdERldGFpbFxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Asus/Desktop/PA502/Backend/AspNet/CristmasTeplate/CristmasTeplate/Views/Shared/Components/BasketBanner/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQmFza2V0QmFubmVyXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Asus/Desktop/PA502/Backend/AspNet/CristmasTeplate/CristmasTeplate/Views/Shared/Components/DetailBanner/Default.cshtml]
@@ -95,8 +103,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUHJvZHVjdHNNYWluUGFnZVxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Asus/Desktop/PA502/Backend/AspNet/CristmasTeplate/CristmasTeplate/Views/Shared/Components/WishListBanner/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcV2lzaExpc3RCYW5uZXJcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Asus/Desktop/PA502/Backend/AspNet/CristmasTeplate/CristmasTeplate/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Asus/Desktop/PA502/Backend/AspNet/CristmasTeplate/CristmasTeplate/Views/WishList/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2lzaExpc3RcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Asus/Desktop/PA502/Backend/AspNet/CristmasTeplate/CristmasTeplate/Views/_ViewImports.cshtml]

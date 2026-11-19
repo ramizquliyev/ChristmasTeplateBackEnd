@@ -12,6 +12,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService,CategoryService>();
+builder.Services.AddScoped<IBasketService,BasketService>();
+builder.Services.AddScoped<IWishListService,WishListService>();
 
 var app = builder.Build();
 

@@ -11,6 +11,6 @@ namespace CristmasTeplate.ViewModels.Product
         public int CategoryId { get; set; }
         public string Style { get; set; }
         public List<SelectListItem> Categories { get; set; }
-        public string Image { get; set; }
+        public List<IFormFile> Images { get; set; }
     }
 }

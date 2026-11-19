@@ -19,7 +19,9 @@
                                     <!-- Image -->
                                     <a asp-controller="ProductDetail" asp-action="Detail" asp-route-id="@item.Id" class="img"><img src="~/img/product/@item.MainImg" alt="Product"></a>
                                     <!-- Wishlist -->
-                                    <a class="wishlist"><i class="fa fa-heart-o"></i></a>
+                                    <form method="post" asp-controller="wishlist" asp-action="create" asp-route-id="@item.Id">
+                                        <button type="submit" class="wishlist"><i class="fa fa-heart-o"></i></button>
+                                    </form>
                                     <!-- Label -->
                                     <span class="label">New</span>
                                 </div>
@@ -45,9 +47,9 @@
                                     </div>
                             
                                     <!-- Action Button -->
-                                    <div class="action-button fix">
-                                        <a href="#">add to cart</a>
-                                    </div>
+                                    <form method="post" asp-controller="basket" asp-action="createorder" asp-route-id="@item.Id">
+                                        <button class="btn btn-success" type="submit">Add To Basket</button>
+                                    </form>
                             
                                 </div>
 

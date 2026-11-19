@@ -9,7 +9,7 @@
         public string Composition { get; set; }
         public string Style { get; set; }
         public Category Category { get; set; }
-        public int? CategoryId { get; set; }
+        public int CategoryId { get; set; }
 
     }
 }

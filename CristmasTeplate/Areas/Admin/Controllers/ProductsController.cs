@@ -1,4 +1,5 @@
-﻿using CristmasTeplate.Data;
+﻿using Azure.Core;
+using CristmasTeplate.Data;
 using CristmasTeplate.Models;
 using CristmasTeplate.Services.Interfaces;
 using CristmasTeplate.ViewModels.Product;
@@ -52,13 +53,18 @@ namespace CristmasTeplate.Areas.Admin.Controllers
             await _context.Products.AddAsync(res);
             await _context.SaveChangesAsync();
 
-            ProductImage image = new();
-            image.Name = reguest.Image;
-            image.ProductId = res.Id;
-            image.IsMane = true;
-
-            await _context.ProductImages.AddAsync(image);
-            await _context.SaveChangesAsync();
+            bool MainImg = true;
+            foreach (var item in reguest.Images)
+            {
+                ProductImage image = new();
+                image.Name = item.FileName;
+                image.ProductId = res.Id;
+                image.IsMane = MainImg;
+                await _context.ProductImages.AddAsync(image);
+                await _context.SaveChangesAsync();
+                MainImg = false;
+            }
+            
 
             return RedirectToAction("index");
         }
@@ -106,8 +112,24 @@ namespace CristmasTeplate.Areas.Admin.Controllers
             find.Composition = editVM.Composition;
             find.Style = editVM.Style;
             find.CategoryId = editVM.CategoryId;
-            find.ProductImages.FirstOrDefault(m => m.IsMane).Name = editVM.Image;
             await _context.SaveChangesAsync();
+
+
+            if (editVM.Images != null)
+            {
+                _context.ProductImages.RemoveRange(find.ProductImages);
+                bool MainImg = true;
+                foreach (var item in editVM.Images)
+                {
+                    ProductImage image = new();
+                    image.Name = item.FileName;
+                    image.ProductId = find.Id;
+                    image.IsMane = MainImg;
+                    await _context.ProductImages.AddAsync(image);
+                    await _context.SaveChangesAsync();
+                    MainImg = false;
+                }
+            }
 
             return RedirectToAction("index");
         }

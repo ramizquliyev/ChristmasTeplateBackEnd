@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CristmasTeplate")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+97b11fcabc6a8148fa8d30687337d9b02a9f086f")]
 [assembly: System.Reflection.AssemblyProductAttribute("CristmasTeplate")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CristmasTeplate")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

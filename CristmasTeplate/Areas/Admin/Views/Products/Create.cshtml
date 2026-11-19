@@ -1,7 +1,7 @@
 ﻿@model ProductCreateVM
 
 <div class="card-style mb-30" style="width: 30%; margin: 0 auto; margin-top: 13%;">
-    <form asp-action="Create" method="post">
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
         <h6 class="mb-25">Create Product</h6>
 
         <div class="input-style-1">
@@ -38,7 +38,7 @@
 
         <div class="input-style-1">
             <label>Image</label>
-            <input asp-for="Image" type="file" placeholder="Product Composition" />
+            <input asp-for="Images" type="file" multiple placeholder="Product Composition" />
         </div>
 
         <button class="btn btn-success" type="submit">Create</button>

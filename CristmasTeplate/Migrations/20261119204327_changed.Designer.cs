@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CristmasTeplate.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20261115154240_start2")]
-    partial class start2
+    [Migration("20261119204327_changed")]
+    partial class changed
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,41 @@ namespace CristmasTeplate.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("CristmasTeplate.Models.Basket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Baskets");
+                });
+
+            modelBuilder.Entity("CristmasTeplate.Models.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
+
             modelBuilder.Entity("CristmasTeplate.Models.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -31,6 +66,9 @@ namespace CristmasTeplate.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Composition")
                         .IsRequired()
@@ -52,6 +90,8 @@ namespace CristmasTeplate.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
                 });
@@ -81,10 +121,61 @@ namespace CristmasTeplate.Migrations
                     b.ToTable("ProductImages");
                 });
 
+            modelBuilder.Entity("CristmasTeplate.Models.WishListItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("WishListItems");
+                });
+
+            modelBuilder.Entity("CristmasTeplate.Models.Basket", b =>
+                {
+                    b.HasOne("CristmasTeplate.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("CristmasTeplate.Models.Product", b =>
+                {
+                    b.HasOne("CristmasTeplate.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
             modelBuilder.Entity("CristmasTeplate.Models.ProductImage", b =>
                 {
                     b.HasOne("CristmasTeplate.Models.Product", "Product")
                         .WithMany("ProductImages")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("CristmasTeplate.Models.WishListItem", b =>
+                {
+                    b.HasOne("CristmasTeplate.Models.Product", "Product")
+                        .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
