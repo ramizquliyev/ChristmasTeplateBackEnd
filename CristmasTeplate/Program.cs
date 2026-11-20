@@ -14,6 +14,7 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService,CategoryService>();
 builder.Services.AddScoped<IBasketService,BasketService>();
 builder.Services.AddScoped<IWishListService,WishListService>();
+builder.Services.AddScoped<ISettingService,SettingService>();
 
 var app = builder.Build();
 

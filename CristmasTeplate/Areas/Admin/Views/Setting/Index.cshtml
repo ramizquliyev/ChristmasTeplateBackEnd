@@ -1,0 +1,39 @@
+﻿@model Dictionary<string,string>
+
+<div style="text-align: center; margin-top: 15pc;     display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 6pc;">
+    <h1>Settings</h1>
+    <a asp-action="create" class="btn btn-success" style="    width: 15%;
+    margin: 0 auto;">Create</a>
+    <table class="table" style="    width: 80%;
+        margin-left: 19pc;
+        padding-left: 13pc;">
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+                <th>Operation</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Key</td>
+                    <td>@item.Value</td>
+                    <td style="    display: flex;
+                        justify-content: center;
+                        gap: 2pc;">
+                        <a class="btn btn-secondary" asp-action="edit" asp-route-keyName="@item.Key">Edit</a>
+                        <form asp-controller="setting" asp-action="delete" method="post" asp-route-keyName="@item.Key">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

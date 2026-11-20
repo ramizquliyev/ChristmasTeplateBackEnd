@@ -1,0 +1,23 @@
+﻿@model SettingCreateVM
+
+<div class="card-style mb-30" style="width: 30%; margin: 0 auto; margin-top: 13%;">
+    <form asp-action="create" method="post">
+        <h6 class="mb-25">Create Setting</h6>
+
+        <div class="input-style-1">
+            <label>Key</label>
+            <select asp-for="Key">
+                <option value="Addres">Addres</option>
+                <option value="Phone Number">Phone Number</option>
+                <option value="Email">Email</option>
+                <option value="Eax">Eax</option>
+            </select>
+        </div>
+        <div class="input-style-1">
+            <label>Value</label>
+            <input asp-for="Value" type="text" placeholder="Setting Value" />
+        </div>
+        <button class="btn btn-success" type="submit">Create</button>
+        <a class="btn btn-danger type="submit" asp-action="Index">Back</a>
+    </form>
+</div>

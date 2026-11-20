@@ -1,4 +1,6 @@
-﻿<div class="footer-section section bg-dark" style="background-image: url(img/bg/footer-bg.png)">
+﻿@model Dictionary<string,string>
+
+<div class="footer-section section bg-dark" style="background-image: url(img/bg/footer-bg.png)">
         <div class="container">
             
             <div class="row">
@@ -53,10 +55,10 @@
                                 <h4 class="widget-title">Contact Us</h4>
 
                                 <ul>
-                                    <li><span>Address:</span> ur address goes here,street Crossroad 123</li>
-                                    <li><span>Phone:</span> +99 859 658 589 . +69 587 456 25</li>
-                                    <li><span>Eax:</span> +55 784 7585 . + 985 698 586</li>
-                                    <li><span>Email:</span> christ@email.com</li>
+                                <li><span>Address:</span>@(Model.TryGetValue("Addres", out var address) ? address : "Addres Not Written Alredy")</li>
+                                <li><span>Phone:</span>@(Model.TryGetValue("Phone Number", out var phone) ? phone : "Phone Number Not Written Alredy")</li>
+                                <li><span>Eax:</span>@(Model.TryGetValue("Eax", out var eax) ? eax : "Eax Number Not Written Alredy")</li>
+                                <li><span>Email:</span>@(Model.TryGetValue("Email", out var email) ? email : "Email Not Written Alredy")</li>
                                 </ul>  
 
                             </div>

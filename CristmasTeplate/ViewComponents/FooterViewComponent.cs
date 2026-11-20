@@ -1,12 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CristmasTeplate.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CristmasTeplate.ViewComponents
 {
     public class FooterViewComponent : ViewComponent
     {
-        public IViewComponentResult Invoke()
+        private readonly ISettingService _settingService;
+
+        public FooterViewComponent(ISettingService settingService)
         {
-            return View();
+            _settingService = settingService;
+        }
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
+            var settings = await _settingService.GetAllAsync();
+            return View(settings);
         }
     }
 }
