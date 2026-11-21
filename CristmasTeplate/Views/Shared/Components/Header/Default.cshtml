@@ -34,7 +34,14 @@
                                 <!-- Account Menu -->
                                 <div class="account-menu col-md-4 col-12">
                                     <ul>
-                                        <li><a href="#">My Account</a></li>
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                            <li><a asp-controller="profile" asp-action="index">@User.Identity.Name</a></li>
+                                        }
+                                        else
+                                        {
+                                            <li><a asp-controller="account" asp-action="login">Login</a></li>
+                                        }
                                         <li><a asp-controller="wishlist" asp-action="index">Wishlist</a></li>
                                         <li><a asp-controller="basket" asp-action="index"><i class="fa fa-shopping-cart"></i><span class="num">2</span></a>
                                             
